@@ -1,0 +1,26 @@
+[
+  {
+    "title": "E-commerce Platform",
+    "description": "A full-stack e-commerce solution with payment gateway integration and admin dashboard.",
+    "image": "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "techStack": ["React", "Node.js", "MongoDB", "Stripe"],
+    "liveLink": "#",
+    "githubLink": "#"
+  },
+  {
+    "title": "Task Management App",
+    "description": "A beautiful and intuitive task manager with real-time collaboration features.",
+    "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "techStack": ["Vue.js", "Firebase", "Tailwind"],
+    "liveLink": "#",
+    "githubLink": "#"
+  },
+  {
+    "title": "AI Image Generator",
+    "description": "An application that leverages OpenAI APIs to generate and edit images based on text prompts.",
+    "image": "https://images.unsplash.com/photo-1678280628373-042bf9296bd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "techStack": ["React", "Express", "OpenAI API"],
+    "liveLink": "#",
+    "githubLink": "#"
+  }
+]
