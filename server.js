@@ -11,11 +11,34 @@ const app = express();
 // Connect to Database
 connectDB();
 
+const normalizeOrigin = (value) => {
+  if (!value) {
+    return null;
+  }
+
+  try {
+    return new URL(value).origin;
+  } catch {
+    return value.replace(/\/$/, '');
+  }
+};
+
+const allowedOrigins = [
+  normalizeOrigin(process.env.FRONTEND_URL),
+  normalizeOrigin('https://heet-113.github.io'),
+].filter(Boolean);
+
 // CORS Configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
-    ? process.env.FRONTEND_URL || '*'
-    : '*',
+    ? (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+          return callback(null, true);
+        }
+
+        return callback(new Error(`CORS blocked for origin: ${origin}`));
+      }
+    : true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
